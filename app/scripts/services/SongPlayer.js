@@ -1,10 +1,21 @@
- (function() {
-     function SongPlayer(Fixtures) {
+ 
+(function() {
+    
+         angular
+         .module('blocJams')
+//         .factory('SongPlayer', [SongPlayer]);
+         .factory('SongPlayer', ['$rootScope', 'Fixtures', SongPlayer]);
+//     new SongPlayer(sadfasdf, new Fixtures())
+    
+     function SongPlayer($rootScope, Fixtures) {
           var SongPlayer = {};
+
+         
  /**
  * @desc Retrives album info
  * @type {Object}
  */
+        debugger;
           var currentAlbum = Fixtures.getAlbum();
  /**
  * @desc Buzz object audio file
@@ -101,9 +112,7 @@
 }
      
      
-     angular
-         .module('blocJams')
-         .factory('SongPlayer', SongPlayer);
+
  })();
 
 /**
