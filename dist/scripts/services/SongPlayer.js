@@ -34,12 +34,12 @@
               currentBuzzObject = new buzz.sound(song.audioUrl, {
                   formats: ['mp3'],
                   preload: true
-            });
+                  });
               
-          currentBuzzObject.bind('timeupdate', function() {
-              $rootScope.$apply(function() {
-              SongPlayer.currentTime = currentBuzzObject.getTime();
-              });
+              currentBuzzObject.bind('timeupdate', function() {
+                  $rootScope.$apply(function() {
+                  SongPlayer.currentTime = currentBuzzObject.getTime();
+                  });
      });
 
  
@@ -83,6 +83,17 @@
 */
          SongPlayer.currentSong = null;
 
+         SongPlayer.volume = null;
+/**
+/volume bar
+*/
+         SongPlayer.setVolume = function(volume){
+             if (currentBuzzObject){
+                currentBuzzObject.setVolume(volume);
+             }
+         };
+         
+         
 /**
  * @function SongPlayer.play
  * @desc Causes song to play

@@ -56,11 +56,16 @@
                         scope.value = percent * scope.max;
                         notifyOnChange(scope.value); 
          });
-            var notifyOnChange = function(newValue) {
+            var notifyOnChange = function(coolValue) {
                 if (typeof scope.onChange === 'function') {
-                scope.onChange({value: newValue});
+                scope.onChange({value: coolValue});
                 }
- };
+         };
+//             var notifyOnChange = function(newValue) {
+//                if (typeof scope.onChange === 'function') {
+//                scope.onChange({value: newValue});
+//                }
+//         };
 
      });
  
